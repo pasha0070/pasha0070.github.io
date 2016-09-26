@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Магазин</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/npm.js"></script>
+	<script src="js/jquery/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+	<script src="js/jquery/datetimepicker/moment.js"></script>
+	<!--Owl Carousel-->
+	<link rel="stylesheet" href="js/jquery/owl-carousel/owl.carousel.css"/>
+	<link rel="stylesheet" href="js/jquery/owl-carousel/owl.theme.css"/>
+	<link rel="stylesheet" href="js/jquery/owl-carousel/owl.transitions.css"/>
+	<script src="js/jquery/owl-carousel/owl.carousel.min.js"></script>
+	<!--js-->
+	<script src="js/height-blocks.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	<nav id="top"> 
+	<div id="grad-top"></div>
+	  <div class="container">
+		<div class="row">
+			<div class="col-md-2 col-sm-4 col-xs-12 text-center">				
+				<div class="contact-top">
+					<span class="glyphicon glyphicon-phone-alt"></span>
+					<a href="tel:+777 (100) 1234">+777 (100) 1234</a>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-3 col-xs-12 text-center">
+				<div class="autorization">
+					<span>Welcome visitor you can <a href="#">login</a> or <a href="#">create an account</a>.</span>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-5 col-xs-12">					
+			<div class="row">
+				<div class="col-md-6 col-sm-5 col-xs-6 text-right" id="language-top"> <!-- Сделать через nav -->
+					<form action="#" method="post" enctype="multipart/form-data" id="language">					  
+						 <ul class="list-inline">
+							<li><button class="btn btn-link active" type="button" name="EN">EN</button></li>
+							<li><button class="btn btn-link" type="button" name="RU">RU</button></li>
+						  </ul>
+					  <input type="hidden" name="code" value=""/>
+					  <input type="hidden" name="redirect" value="#" />
+					</form>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-6" id="curr-top"> <!-- Сделать через nav -->
+						<form action="#" method="post" enctype="multipart/form-data" id="currency">
+						  <div class="btn-group">
+							<ul class="list-inline">
+								<li><button class="currency-select btn btn-link btn-block active" type="button" name="EUR">€</button></li>
+								<li><button class="currency-select btn btn-link btn-block" type="button" name="GBP">?</button></li>
+								<li><button class="currency-select btn btn-link btn-block" type="button" name="USD">$</button></li>
+							</ul>
+						  </div>
+						  <input type="hidden" name="code" value="" />
+						  <input type="hidden" name="redirect" value="#" />
+						</form>
+					</div>	
+			</div>
+		</div>
+	  </div>	 
+	</nav>
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-2 col-lg-2 text-center logo-top">
+					<div id="logo">
+						<a href="#"><img src="img/logo.png" title="NewStore" alt="NewStore" /></a>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-3 col-lg-3 col-lg-push-1">
+					<div id="searchtop">
+						<div id="search" class="input-group">
+							<input type="text" name="searh" value="" placeholder="Поиск" class="input-lg search-autocomplete" />
+							<span class="input-group-btn button_search">
+								<button type="button" class="btn btn-search">
+									<i class="fa fa-search"></i>
+								</button>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-5 col-lg-4 col-xs-12 col-lg-push-1"> 
+					
+						<nav class="navbar  user-nav-top" id="navtop" role="navigation">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+							  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+									<span class="navbar-brand visible-xs hidden-sm hidden-md hidden-lg" href="#">Account</span>
+									<i class="fa fa-bars" aria-hidden="true"></i>
+							  </button>
+							 
+							</div>
+
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								  <ul class="nav navbar-nav navbar-left">
+									<li><a href="#">My Account</a></li>
+									<li><a href="#">My Wishlist</a></li>
+									<li><a href="#">Log In</a></li>
+									<li><a href="#">Sign Up</a></li>
+								  </ul>
+							</div><!-- /.navbar-collapse -->
+						</nav>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-2 col-lg-2  col-lg-push-1">
+						<div class="shopping-cart">
+							<div class="btn-group btn-block " id="cart">
+								<button type="button" data-toggle="dropdown" data-loading-text="Загрузка..." class="btn btn-block dropdown-toggle" aria-expanded="false">
+									<i class=" shop-bag fa fa-shopping-basket" aria-hidden="true"></i>
+										<span class="cart-total"><span class="products">Cart <b>0</b><br> </span><span class="prices"><b>$0.00</b></span></span>
+								</button>
+								<ul class="dropdown-menu pull-right">
+									<li>
+										<p class="text-center">Ваша корзина пуста!</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+			</div>	
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<nav class="navbar" id="additional-menu">
+						<div class="navbar-header">							
+							<button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">							
+							<span class="navbar-brand visible-xs hidden-sm hidden-md hidden-lg">Категории</span>
+							<i class="fa fa-bars" aria-hidden="true"></i>
+							</button>							
+						</div>
+						<div class="collapse navbar-collapse navbar-ex1-collapse nav-head-foot">
+							<ul class="nav navbar-nav">
+								<li class="hidden-xs active"><a href="#">Home</a></li>
+								<li class="dropdown">
+								  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solids<i class="fa fa-caret-down visible-xs"></i></a>								  
+								  <ul class="dropdown-menu">
+									<li><a href="#">Действие</a></li>
+									<li><a href="#">Другое действие</a></li>
+									<li><a href="#">Что-то еще</a></li>
+								  </ul>
+								</li>
+								<li class="dropdown">
+								  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Liquids<i class="fa fa-caret-down visible-xs"></i></a>
+								  <ul class="dropdown-menu">
+									<li><a href="#">Действие</a></li>
+									<li><a href="#">Другое действие</a></li>
+									<li><a href="#">Что-то еще</a></li>
+								  </ul>
+								</li>
+								<li class="dropdown">
+								  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Spray<i class="fa fa-caret-down visible-xs"></i></a>
+								  <ul class="dropdown-menu">
+									<li><a href="#">Действие</a></li>
+									<li><a href="#">Другое действие</a></li>
+									<li><a href="#">Что-то еще</a></li>
+								  </ul>
+								</li>
+								<li class="dropdown">
+								  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Electric<i class="fa fa-caret-down visible-xs"></i></a>
+								  <ul class="dropdown-menu">
+									<li><a href="#">Действие</a></li>
+									<li><a href="#">Другое действие</a></li>
+									<li><a href="#">Что-то еще</a></li>
+								  </ul>
+								</li>
+								<li class="dropdown">
+								  <a href="#" class="dropdown-toggle" data-toggle="dropdown">For cars<i class="fa fa-caret-down visible-xs"></i></a>
+								  <ul class="dropdown-menu">
+									<li><a href="#">Действие</a></li>
+									<li><a href="#">Другое действие</a></li>
+									<li><a href="#">Что-то еще</a></li>
+								  </ul>
+								</li>								  
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 slider-index">
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				  </ol>
+
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner">
+					<div class="item active">
+					  <img src="img/img.jpg" alt="...">
+					  <div class="carousel-caption">
+					  <h3>Breeze Noticeables</h3>
+						<p>The new series of natural air fresheners. 
+							Febreze Noticeables Meadows & Rain 
+							Air Freshener Refill.</p>
+					  </div>
+					</div>
+					<div class="item">
+					  <img src="img/img1.jpg" alt="...">
+					  <div class="carousel-caption">
+						<h3>Breeze Noticeables</h3>
+						<p>The new series of natural air fresheners. 
+							Febreze Noticeables Meadows & Rain 
+							Air Freshener Refill.</p>
+					  </div>
+					</div>
+					<div class="item">
+					  <img src="img/img2.jpg" alt="...">
+					  <div class="carousel-caption">
+						<h3>Breeze Noticeables</h3>
+						<p>The new series of natural air fresheners. 
+							Febreze Noticeables Meadows & Rain 
+							Air Freshener Refill.</p>
+					  </div>
+					</div>
+				  </div>
+
+				  <!-- Controls -->
+				  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+					<i class="fa fa-angle-left" aria-hidden="true"></i>
+				  </a>
+				  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+					<i class="fa fa-angle-right" aria-hidden="true"></i>
+				  </a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row banner-main">
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="banner" onclick="location='delivery_information'">
+					<div class="banner-img pull-left">
+						<img src="img/icon.png" alt="123" class="img-circle" width="75" height="75"></img>
+					</div>
+					<div class="banner-info">
+						<h4>Best price</h4>
+						<p>this week</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="banner" onclick="location='delivery_information'">
+					<div class="banner-img pull-left">
+						<img src="img/icon.png" alt="123" class="img-circle" width="75" height="75"></img>
+					</div>
+					<div class="banner-info">
+						<h4>New smells</h4>
+						<p>in the next series</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="banner" onclick="location='delivery_information'">
+					<div class="banner-img pull-left">
+						<img src="img/img.jpg" alt="123" class="img-circle" width="75" height="75"></img>
+					</div>
+					<div class="banner-info">
+						<h4>Only natural</h4>
+						<p>air fresheners</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 product-slider">
+				<div class="container-module">
+					<div class="title-module">
+						<span>Best Sellers</span>
+					</div>
+					<div class="slider-item">
+						<div id="carousel1" class="owl-carousel owl-theme">
+						  <div class="item">
+							<div class="stiker-product">
+								<div class="product-thumb">						
+									<div class="stiker text-center stiker-sale">sale</div>
+									<div class="image text-center">
+										<a href="">
+											<img src="img/photo-product.jpg"></img>
+										</a>
+									</div>
+									<div class="caption">
+										<div class="product-name">
+											<a href="#">Febreze Air Effects New Zealand Springs</a>
+										</div>
+										<div class="action text-right">
+											<div class="price">
+												<div class="product-price">$550.00</div>
+												<div class="sale-price">$725.00</div>
+											</div>									
+											<div class="compare">
+												<button class="btn btn-compare" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В сравнение">
+													<i class="fa fa-exchange"></i>
+												</button>
+											</div>
+											<div class="wishlist">
+												<button class="btn btn-wishlist" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В закладки">
+												<i class="fa fa-heart"></i>
+												</button>
+											</div>
+											<div class="cart">
+												<button class="btn btn-general" type="button" onclick="#">
+													<i class="fa fa-shopping-basket"></i>
+												</button>
+											</div>										
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="item">
+							<div class="stiker-product">
+								<div class="product-thumb">						
+									<div class="stiker text-center stiker-top">top</div>
+									<div class="image text-center">
+										<a href="">
+											<img src="img/photo-product.jpg"></img>
+										</a>
+									</div>
+									<div class="caption">
+										<div class="product-name">
+											<a href="#">Febreze Air Effects New Zealand Springs</a>
+										</div>
+										<div class="action text-right">
+											<div class="price">
+												<div class="product-price">$550.00</div>
+											</div>									
+											<div class="compare">
+												<button class="btn btn-compare" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В сравнение">
+													<i class="fa fa-exchange"></i>
+												</button>
+											</div>
+											<div class="wishlist">
+												<button class="btn btn-wishlist" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В закладки">
+												<i class="fa fa-heart"></i>
+												</button>
+											</div>
+											<div class="cart">
+												<button class="btn btn-general" type="button" onclick="#">
+													<i class="fa fa-shopping-basket"></i>
+												</button>
+											</div>										
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="item">
+							<div class="stiker-product">
+								<div class="product-thumb">						
+									<div class="stiker text-center stiker-new">new</div>
+									<div class="image text-center">
+										<a href="">
+											<img src="img/photo-product.jpg"></img>
+										</a>
+									</div>
+									<div class="caption">
+										<div class="product-name">
+											<a href="#">Febreze Air Effects New Zealand Springs</a>
+										</div>
+										<div class="action text-right">
+											<div class="price">
+												<div class="product-price">$550.00</div>
+												<div class="sale-price">$725.00</div>
+											</div>									
+											<div class="compare">
+												<button class="btn btn-compare" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В сравнение">
+													<i class="fa fa-exchange"></i>
+												</button>
+											</div>
+											<div class="wishlist">
+												<button class="btn btn-wishlist" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В закладки">
+												<i class="fa fa-heart"></i>
+												</button>
+											</div>
+											<div class="cart">
+												<button class="btn btn-general" type="button" onclick="#">
+													<i class="fa fa-shopping-basket"></i>
+												</button>
+											</div>										
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="item">
+							  <div class="stiker-product">
+								<div class="product-thumb">			
+									<div class="image text-center">
+										<a href="">
+											<img src="img/photo-product.jpg"></img>
+										</a>
+									</div>
+									<div class="caption">
+										<div class="product-name">
+											<a href="#">Febreze Air Effects New Zealand Springs</a>
+										</div>
+										<div class="action text-right">
+											<div class="price">
+												<div class="product-price">$550.00</div>
+												<div class="sale-price">$725.00</div>
+											</div>									
+											<div class="compare">
+												<button class="btn btn-compare" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В сравнение">
+													<i class="fa fa-exchange"></i>
+												</button>
+											</div>
+											<div class="wishlist">
+												<button class="btn btn-wishlist" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В закладки">
+												<i class="fa fa-heart"></i>
+												</button>
+											</div>
+											<div class="cart">
+												<button class="btn btn-general" type="button" onclick="#">
+													<i class="fa fa-shopping-basket"></i>
+												</button>
+											</div>										
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="item">
+							<div class="stiker-product">
+								<div class="product-thumb">			
+									<div class="image text-center">
+										<a href="">
+											<img src="img/photo-product.jpg"></img>
+										</a>
+									</div>
+									<div class="caption">
+										<div class="product-name">
+											<a href="#">Febreze Air Effects New Zealand Springs</a>
+										</div>
+										<div class="action text-right">
+											<div class="price">
+												<div class="product-price">$550.00</div>
+												<div class="sale-price">$725.00</div>
+											</div>									
+											<div class="compare">
+												<button class="btn btn-compare" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В сравнение">
+													<i class="fa fa-exchange"></i>
+												</button>
+											</div>
+											<div class="wishlist">
+												<button class="btn btn-wishlist" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В закладки">
+												<i class="fa fa-heart"></i>
+												</button>
+											</div>
+											<div class="cart">
+												<button class="btn btn-general" type="button" onclick="#">
+													<i class="fa fa-shopping-basket"></i>
+												</button>
+											</div>										
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="item">
+							<div class="stiker-product">
+								<div class="product-thumb">						
+									<div class="stiker text-center stiker-sale">sale</div>
+									<div class="image text-center">
+										<a href="">
+											<img src="img/photo-product.jpg"></img>
+										</a>
+									</div>
+									<div class="caption">
+										<div class="product-name">
+											<a href="#">Febreze Air Effects New Zealand Springs</a>
+										</div>
+										<div class="action text-right">
+											<div class="price">
+												<div class="product-price">$550.00</div>
+												<div class="sale-price">$725.00</div>
+											</div>									
+											<div class="compare">
+												<button class="btn btn-compare" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В сравнение">
+													<i class="fa fa-exchange"></i>
+												</button>
+											</div>
+											<div class="wishlist">
+												<button class="btn btn-wishlist" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В закладки">
+												<i class="fa fa-heart"></i>
+												</button>
+											</div>
+											<div class="cart">
+												<button class="btn btn-general" type="button" onclick="#">
+													<i class="fa fa-shopping-basket"></i>
+												</button>
+											</div>										
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="item">
+							<div class="stiker-product">
+								<div class="product-thumb">						
+									<div class="stiker text-center stiker-sale">sale</div>
+									<div class="image text-center">
+										<a href="">
+											<img src="img/photo-product.jpg"></img>
+										</a>
+									</div>
+									<div class="caption">
+										<div class="product-name">
+											<a href="#">Febreze Air Effects New Zealand Springs</a>
+										</div>
+										<div class="action text-right">
+											<div class="price">
+												<div class="product-price">$550.00</div>
+												<div class="sale-price">$725.00</div>
+											</div>									
+											<div class="compare">
+												<button class="btn btn-compare" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В сравнение">
+													<i class="fa fa-exchange"></i>
+												</button>
+											</div>
+											<div class="wishlist">
+												<button class="btn btn-wishlist" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В закладки">
+												<i class="fa fa-heart"></i>
+												</button>
+											</div>
+											<div class="cart">
+												<button class="btn btn-general" type="button" onclick="#">
+													<i class="fa fa-shopping-basket"></i>
+												</button>
+											</div>										
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						</div>
+						<script type="text/javascript"><!--					
+						var owl = $("#carousel1");
+							owl.owlCarousel({
+							responsiveBaseWidth: "#carousel1",
+							itemsCustom: [[0, 1], [500, 2], [750, 3], [1000,4]],
+							slideSpeed: 200,
+							paginationSpeed: 300,
+							navigation: true,
+							stopOnHover: true,		
+							mouseDrag: false,
+							pagination: false,
+							autoPlay: false,
+							navigationText: ['<div class="prev-module prev"><i class="fa fa-angle-left arrow"></i></div>', '<div class="next-module next"><i class="fa fa-angle-right arrow"></i></div>'],
+							});
+						--></script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 product-slider">
+				<div class="container-module">
+					<div class="title-module">
+						<span>Featured Products</span>
+					</div>
+
+					<div class="slider-item">
+						<div id="carousel2" class="owl-carousel">
+						  <div class="item">
+							<div class="stiker-product">
+								<div class="product-thumb">						
+									<div class="stiker text-center stiker-new">new</div>
+									<div class="image text-center">
+										<a href="">
+											<img src="img/photo-product.jpg"></img>
+										</a>
+									</div>
+									<div class="caption">
+										<div class="product-name">
+											<a href="#">Febreze Air Effects New Zealand Springs</a>
+										</div>
+										<div class="action text-right">
+											<div class="price">
+												<div class="product-price">$1230.00</div>
+												<div class="sale-price">$725.00</div>
+											</div>									
+											<div class="compare">
+												<button class="btn btn-compare" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В сравнение">
+													<i class="fa fa-exchange"></i>
+												</button>
+											</div>
+											<div class="wishlist">
+												<button class="btn btn-wishlist" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В закладки">
+												<i class="fa fa-heart"></i>
+												</button>
+											</div>
+											<div class="cart">
+												<button class="btn btn-general" type="button" onclick="#">
+													<i class="fa fa-shopping-basket"></i>
+												</button>
+											</div>										
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="item">
+							<div class="stiker-product">
+								<div class="product-thumb">						
+									<div class="stiker text-center stiker-sale">sale</div>
+									<div class="image text-center">
+										<a href="">
+											<img src="img/photo-product.jpg"></img>
+										</a>
+									</div>
+									<div class="caption">
+										<div class="product-name">
+											<a href="#">Febreze Air Effects New Zealand Springs</a>
+										</div>
+										<div class="action text-right">
+											<div class="price">
+												<div class="product-price">$5330.00</div>
+											</div>									
+											<div class="compare">
+												<button class="btn btn-compare" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В сравнение">
+													<i class="fa fa-exchange"></i>
+												</button>
+											</div>
+											<div class="wishlist">
+												<button class="btn btn-wishlist" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В закладки">
+												<i class="fa fa-heart"></i>
+												</button>
+											</div>
+											<div class="cart">
+												<button class="btn btn-general" type="button" onclick="#">
+													<i class="fa fa-shopping-basket"></i>
+												</button>
+											</div>										
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="item">
+							<div class="stiker-product">
+								<div class="product-thumb">						
+									<div class="stiker text-center stiker-new">new</div>
+									<div class="image text-center">
+										<a href="">
+											<img src="img/photo-product.jpg"></img>
+										</a>
+									</div>
+									<div class="caption">
+										<div class="product-name">
+											<a href="#">Febreze Air Effects New Zealand Springs</a>
+										</div>
+										<div class="action text-right">
+											<div class="price">
+												<div class="product-price">$550.00</div>
+												<div class="sale-price">$725.00</div>
+											</div>									
+											<div class="compare">
+												<button class="btn btn-compare" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В сравнение">
+													<i class="fa fa-exchange"></i>
+												</button>
+											</div>
+											<div class="wishlist">
+												<button class="btn btn-wishlist" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В закладки">
+												<i class="fa fa-heart"></i>
+												</button>
+											</div>
+											<div class="cart">
+												<button class="btn btn-general" type="button" onclick="#">
+													<i class="fa fa-shopping-basket"></i>
+												</button>
+											</div>										
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="item">
+							  <div class="stiker-product">
+								<div class="product-thumb">			
+									<div class="image text-center">
+										<a href="">
+											<img src="img/photo-product.jpg"></img>
+										</a>
+									</div>
+									<div class="caption">
+										<div class="product-name">
+											<a href="#">Febreze Air Effects New Zealand Springs</a>
+										</div>
+										<div class="action text-right">
+											<div class="price">
+												<div class="product-price">$550.00</div>
+												<div class="sale-price">$725.00</div>
+											</div>									
+											<div class="compare">
+												<button class="btn btn-compare" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В сравнение">
+													<i class="fa fa-exchange"></i>
+												</button>
+											</div>
+											<div class="wishlist">
+												<button class="btn btn-wishlist" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В закладки">
+												<i class="fa fa-heart"></i>
+												</button>
+											</div>
+											<div class="cart">
+												<button class="btn btn-general" type="button" onclick="#">
+													<i class="fa fa-shopping-basket"></i>
+												</button>
+											</div>										
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="item">
+							<div class="stiker-product">
+								<div class="product-thumb">			
+									<div class="image text-center">
+										<a href="">
+											<img src="img/photo-product.jpg"></img>
+										</a>
+									</div>
+									<div class="caption">
+										<div class="product-name">
+											<a href="#">Febreze Air Effects New Zealand Springs</a>
+										</div>
+										<div class="action text-right">
+											<div class="price">
+												<div class="product-price">$550.00</div>
+												<div class="sale-price">$725.00</div>
+											</div>									
+											<div class="compare">
+												<button class="btn btn-compare" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В сравнение">
+													<i class="fa fa-exchange"></i>
+												</button>
+											</div>
+											<div class="wishlist">
+												<button class="btn btn-wishlist" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В закладки">
+												<i class="fa fa-heart"></i>
+												</button>
+											</div>
+											<div class="cart">
+												<button class="btn btn-general" type="button" onclick="#">
+													<i class="fa fa-shopping-basket"></i>
+												</button>
+											</div>										
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="item">
+							<div class="stiker-product">
+								<div class="product-thumb">						
+									<div class="stiker text-center stiker-sale">sale</div>
+									<div class="image text-center">
+										<a href="">
+											<img src="img/photo-product.jpg"></img>
+										</a>
+									</div>
+									<div class="caption">
+										<div class="product-name">
+											<a href="#">Febreze Air Effects New Zealand Springs</a>
+										</div>
+										<div class="action text-right">
+											<div class="price">
+												<div class="product-price">$550.00</div>
+												<div class="sale-price">$725.00</div>
+											</div>									
+											<div class="compare">
+												<button class="btn btn-compare" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В сравнение">
+													<i class="fa fa-exchange"></i>
+												</button>
+											</div>
+											<div class="wishlist">
+												<button class="btn btn-wishlist" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В закладки">
+												<i class="fa fa-heart"></i>
+												</button>
+											</div>
+											<div class="cart">
+												<button class="btn btn-general" type="button" onclick="#">
+													<i class="fa fa-shopping-basket"></i>
+												</button>
+											</div>										
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="item">
+							<div class="stiker-product">
+								<div class="product-thumb">						
+									<div class="stiker text-center stiker-sale">sale</div>
+									<div class="image text-center">
+										<a href="">
+											<img src="img/photo-product.jpg"></img>
+										</a>
+									</div>
+									<div class="caption">
+										<div class="product-name">
+											<a href="#">Febreze Air Effects New Zealand Springs</a>
+										</div>
+										<div class="action text-right">
+											<div class="price">
+												<div class="product-price">$550.00</div>
+												<div class="sale-price">$725.00</div>
+											</div>									
+											<div class="compare">
+												<button class="btn btn-compare" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В сравнение">
+													<i class="fa fa-exchange"></i>
+												</button>
+											</div>
+											<div class="wishlist">
+												<button class="btn btn-wishlist" type="button" data-toggle="tooltip" title="" onclick="#" data-original-title="В закладки">
+												<i class="fa fa-heart"></i>
+												</button>
+											</div>
+											<div class="cart">
+												<button class="btn btn-general" type="button" onclick="#">
+													<i class="fa fa-shopping-basket"></i>
+												</button>
+											</div>										
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						</div>
+						<script type="text/javascript"><!--					
+						var owl = $("#carousel2");
+							owl.owlCarousel({
+							responsiveBaseWidth: "#carousel2",
+							itemsCustom: [[0, 1], [500, 2], [750, 3], [1000,4]],
+							slideSpeed: 200,
+							paginationSpeed: 300,
+							navigation: true,
+							stopOnHover: true,		
+							mouseDrag: false,
+							pagination: false,
+							autoPlay: false,
+							navigationText: ['<div class="prev-module prev"><i class="fa fa-angle-left arrow"></i></div>', '<div class="next-module next"><i class="fa fa-angle-right arrow"></i></div>'],
+							});
+						--></script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row foot-main">
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="all-foot-main">
+					<h3>About Us</h3>
+					<div class="about-foot-main">Lorem ipsum, libero et luctus molestie, turpis mi sagittis nisl, a scelerisque leo nulla et lectus pendisse dictum posuere elit, in congue nisl varius quis lentesque a tellus eget quam varius aliquet. 
+					<br/><br/>
+					Pellentesque tristique, libero et luctus molestie, turpis mi sagittis nisl, a scelerisque leo nulla et lectus pendisse dictum posuere elit, in congue nisl varius quis lentesque a tellus eget quam varius aliquet.
+					<br/><br/>
+					Vel lobortis gravida. Cursus in dapibus ultrices velit fusce. Felis lacus erat. 
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="all-foot-main">
+					<h3>News</h3>
+					<div class="news-foot-main">
+						<div class="description-news">
+							<span class="date-news-main">3 january 2012</span>
+							<a href="#" class="description-news-main">Fermentum parturient lacus tristique habitant nullam morbi et odio nibh mus dictum tellus erat.</a>
+						</div>
+						<div class="description-news">
+							<span class="date-news-main">3 january 2012</span>
+							<a href="#" class="description-news-main">Fermentum parturient lacus tristique habitant nullam morbi et odio nibh mus dictum tellus erat.</a>
+						</div>
+						<div class="description-news">
+							<span class="date-news-main">3 january 2012</span>
+							<a href="#" class="description-news-main">Fermentum parturient lacus tristique habitant nullam morbi et odio nibh mus dictum tellus erat.</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="all-foot-main">
+					<h3>Newsletter</h3>
+					<div class="feedback-foot-main">
+						<span>Cursus in dapibus ultrices velit fusce. Felis lacus erat. Fermentum parturient lacus tristique habitant nullam morbi et odio nibh mus dictum tellus erat.</span>
+						<div class="feedback">
+							<input type="text" class="form-control" id="input-newsletter" placeholder="Введите почту" value=""/>
+							<button><i class="fa fa-angle-right"></i></button>
+						</div>
+						<div class="feedback-info-foot-main">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<span>Vel lobortis gravida. Cursus in dapibus ultrices velit fusce. Felis 
+							lacus erat. </span>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-6">
+					<h3>Contact Us</h3>
+					<ul class="list-unstyled">
+						<li><i class="fa fa-map-marker" aria-hidden="true" style="margin-left:3px;"></i>49 Archdale, 2B Charleston</li>
+						<li><span class="glyphicon glyphicon-phone-alt"></span><a href="tel:+777 (100) 1234">+777 (100) 1234</a></li>
+						<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:mail@example.com">mail@example.com</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<h3>Information</h3>
+					<ul class="list-unstyled">
+						<li><a href="">About Us</a></li>
+						<li><a href="">Privacy Policy</a></li>
+						<li><a href="">Terms & Conditions</a></li>
+						<li><a href="">Secure payment</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<h3>Costumer Service</h3>
+					<ul class="list-unstyled">
+						<li><a href="">Contact Us</a></li>
+						<li><a href="">Return</a></li>
+						<li><a href="">FAQ</a></li>
+						<li><a href="">Site Map</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<h3>My Account</h3>
+					<ul class="list-unstyled">
+						<li><a href="">My Account</a></li>
+						<li><a href="">Order History</a></li>
+						<li><a href="">Wish List</a></li>
+						<li><a href="">Newsletter</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="copy">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-4 col-xs-4">
+						<p>&#169;Breeze Store2016</p>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-4 text-center">
+						<div class="schetchik">Счетчик</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-4 text-right">
+						<div class="social">
+							<ul class="list-inline">
+								<li><a href="#" target="_blank"><i class="fa fa-vk" aria-hidden="true" style="top:6px;left:7px;"></i></a></li>
+								<li><a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true" style="left:13px;top:7px;"></i></a></li>
+								<li><a href="#" target="_blank"><i class="fa fa-instagram" aria-hidden="true" style="left:11px;top:8px;"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
